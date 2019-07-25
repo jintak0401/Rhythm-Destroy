@@ -37,7 +37,8 @@ public class MovingToggle : MonoBehaviour
     float gap = bluebarLength / (whiteToggles.Length + 1);
     for (int i = 1; i <= whiteToggles.Length; i++)
     {
-      whiteToggles[i - 1].transform.position = new Vector3(position.x + i * gap, position.y, -3); 
+      whiteToggles[i - 1].transform.position = new Vector3(position.x + i * gap, position.y, -3);
+      whiteToggles[i - 1].display.initializePosition(whiteToggles[i - 1].transform.position - new Vector3(0, 0.6f, 0));
     }
   }
 
@@ -63,6 +64,7 @@ public class MovingToggle : MonoBehaviour
         inputManager.inputNum[inputManager.index] = 0;
         inputManager.printing();
       }
+      whiteToggles[index].display.appearDisplay(inputManager.inputNum[inputManager.index]);
       whiteToggles[index++].appearCorrect();
       inputManager.index++;
     }
@@ -72,6 +74,7 @@ public class MovingToggle : MonoBehaviour
       whiteToggles[index].correct = false;
       inputManager.inputNum[inputManager.index] = 0;
       inputManager.printing();
+      whiteToggles[index].display.appearDisplay(inputManager.inputNum[inputManager.index]);
       inputManager.index++;
       whiteToggles[index++].appearCorrect();
     }
@@ -82,6 +85,7 @@ public class MovingToggle : MonoBehaviour
     if (index < whiteToggles.Length &&  this.transform.position.x > whiteToggles[index].transform.position.x)
     {
       whiteToggles[index].done = false;
+      whiteToggles[index].display.disappearDisplay();
       whiteToggles[index++].disappearCorrect();
     }
   }

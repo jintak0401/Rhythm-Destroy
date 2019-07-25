@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
   private Vector3 rightUp;      // Round 밑의 오른쪽 위 월드 좌표 (콜라이더 크기 및 위치 정하기 위함)
   public int[] inputNum = new int[4];    // 선택된 콜라이더
   public int index;       // 몇 번째 입력인지에 대한 index (MovingToggle 에서 변경해줌)
-  private string[] possibleKey = { "a", "s", "d", "f", "j", "k", "l", ";" };      // 컴퓨터로 플레이시 콜라이더 선택 가능한 키들 (왼 쪽부터 1 ~ 8)
+  //private string[] possibleKey = { "a", "s", "d", "f", "j", "k", "l", ";" };      // 컴퓨터로 플레이시 콜라이더 선택 가능한 키들 (왼 쪽부터 1 ~ 8)
   public WhiteToggle lastWhiteToggle;
   private Coroutine[] fadeCoroutine;
 

@@ -6,6 +6,7 @@ public class WhiteToggle : MonoBehaviour
 {
   //public Vector3 position;
   static GameObject GrayToggle;
+  public Display display;
   public bool correct;
   public bool done;
   public O_Symbol right = null;
